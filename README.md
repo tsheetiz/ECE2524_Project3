@@ -5,7 +5,8 @@ Ideas for Project3:
 
 # Twitter
 - Data Scrapper for Twitter
-- Ask any question
-  - Use Twitter and Wolfram API
-  - Ask any question on twitter, use specifc hashtag so I can track the question. Capture payload containing question and send it to the 
-    Wolfram API, which will return an answer
+- Mastermind
+  - Ask any question on Twitter using a specific hashtag (Ex: "#ECE2524 What is the color of the sky")
+    - Question will be captured and the payload will be sent to wolfram
+  - Question will be answered and the answer will be sent to a text file
+ 
