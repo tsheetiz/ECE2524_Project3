@@ -10,4 +10,4 @@ Ideas for Project3:
   - Ask any question on twitter, use specifc hashtag so I can track the question. Capture payload containing question and send it to the 
     Wolfram API, which will return an answer
 
-# Games
+# Game
