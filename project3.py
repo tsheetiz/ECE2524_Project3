@@ -8,6 +8,10 @@ class MyStreamListener(tweepy.StreamListener):
 		self.me = api.me()
 	
 	def on_status(self, tweet):
+		print(f"{tweet.user.name}:{tweet.text}")
+
+	def on_error(self, status):
+		print("Error Detected")
 
 # Authenticate
 auth = tweepy.OAuthHandler(keys.TWITTER_KEY, keys.TWITTER_SECRET_KEY)
@@ -19,5 +23,6 @@ api = tweepy.API(auth, wait_on_rate_limit=True, wait_on_rate_limit_notify=True)
 # Capture Tweet
 tweets_listener = MyStreamListener(api)
 stream = tweepy.Stream(api.auth, tweets_listener)
+stream.filter(track=["Python", "Django", "Tweepy"], languages=["en"])
 
 
