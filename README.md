@@ -18,7 +18,9 @@ Edit Date: 5/1/2020
     - This idea seemed interesting to me since I have my twitter currently set to Private, but if I have a lot of tweets so it would take       me a while to look through all my tweets since 2011. If there is a bad tweet sometime a long the way, I can see what it is and it's       time stamp so I can delete it
   - The tweets that have been flagged will then be outputted to a textfile
   
-Edit date: 5/4/2020
+Edit date: 5/5/2020
 
-- Update to previous edit. 
+- Twitter has a lot of influence on what happens in today's society, from celebrities to politics. A problem that arises from this is    bots, what I want to achieve in this project is be able to detect if a specific twitter account is a bot or not. 
+  - Enter a specific twitter account to review
+  - Will get the following information regarding the account: name, followers/friends count, number of statuses, account age, average tweets per day, most mentioned twitter users, and most used hashtags.
  
