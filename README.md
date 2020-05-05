@@ -17,4 +17,8 @@ Edit Date: 5/1/2020
   - Parse through tweets, and detect if there if any of their tweets contain profanity
     - This idea seemed interesting to me since I have my twitter currently set to Private, but if I have a lot of tweets so it would take       me a while to look through all my tweets since 2011. If there is a bad tweet sometime a long the way, I can see what it is and it's       time stamp so I can delete it
   - The tweets that have been flagged will then be outputted to a textfile
+  
+Edit date: 5/4/2020
+
+- Update to previous edit. 
  
