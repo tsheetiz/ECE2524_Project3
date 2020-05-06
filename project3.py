@@ -40,3 +40,11 @@ if len(account_list) > 0:
 		print("friends_count: " + str(item.friends_count))
 		print("followers_count: " + str(item.followers_count))
 
+# Need to obtain the create date of the twitter account
+tweets = item.statuses_count
+account_created_date = item.created_at
+delta = datetime.utcnow() - account_created_date
+account_age_days = delta.days
+print("Account age (in days): " + str(account_age_days))
+
+
