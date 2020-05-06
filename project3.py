@@ -50,4 +50,31 @@ print("Account age (in days): " + str(account_age_days))
 if account_age_days > 0:
 	print("Average tweets per day: " + "%.2f"%(float(tweets)/float(account_age_days)))
 
+hashtags = []
+mentions = []
+tweet_count = 0
+end_date = datetime.utcnow() - timedelta(days=30) # Break out of loop once we hit tweets older than 30 days
+for status in Cursor(api.user_timeline, id=target).items():
+	tweet_count += 1
+	if hasattr(status, "entities"):
+		entities = status.entities
+		if "hashtags" in entities:
+			for ent in entities["hashtags"]:
+				if ent is not None:
+					if "text" in ent:
+						hashtag = ent["text"]
+						if hashtag is not None:
+							hashtags.append(hashtag)
+		if "user_mentions" in entities:
+			for ent in entities["user_mentions"]:
+				if ent is not None:
+					if "screen_name" is ent:
+						name = ent["screen_name"]
+						if name is not None:
+							mentions.append(name)
+		if status.created_at < end_date:
+			break
+
+
+
 
