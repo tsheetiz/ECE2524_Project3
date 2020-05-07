@@ -43,6 +43,11 @@ Edit date: 5/6/2020
  
  run command -> python3 project3.py tsheetiz
  
+ What to expect:
+  - If it is a bot, then a text message in the command line
+  - If it is not a bot, then a text message in the command line
+  - A text file named "twitter_data.txt" containing data from twitter account
+ 
  # Conclusion
  
  As you can see I used my Twitter account as an example, and the output that you would get in the terminal is that "The account has not been flagged as a bot". If you were to suspect an account of being bot, you can input their username and wait for it to analyze. It will take a lot longer if an account is detected as a bot, as it will analyze all of their hashtags and mentions in the past 30 days. Then if they are suspected of a bot, then you will get the following error "This account has been flagged as a bot account! Requires further review!". 
