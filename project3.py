@@ -89,6 +89,8 @@ average_tweets = (float(tweets)/float(account_age_days))
 
 if(average_tweets > 20):
 	print("This account has been flagged as a bot account!")
+else:
+	print("The account has not been flagged as a bot")
 
 print("All done. Processed " + str(tweet_count) + " tweets.", file=f)
 
