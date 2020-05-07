@@ -85,6 +85,11 @@ print("Most used hashtags:", file=f)
 for item, count in Counter(hashtags).most_common(10):
 	print(item + "\t" + str(count), file=f)
 
+average_tweets = (float(tweets)/float(account_age_days))
+
+if(average_tweets > 20):
+	print("This account has been flagged as a bot account!")
+
 print("All done. Processed " + str(tweet_count) + " tweets.", file=f)
 
 f.close()
