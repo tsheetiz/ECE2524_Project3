@@ -29,3 +29,22 @@ Edit date: 5/6/2020
     - Bots post, a bot account tweets up to around 2,000 times a day
     - If an account has around 2,000 average tweets per day, then we can assume that the account is a bot. A print statement will be sent to the command line stating that the bot has been detected as a bot.
  
+ # HOW TO RUN
+ 
+ Libraries used: tweepy, time, sys, datetime, collections, keys
+ 
+ Make sure to have the keys.py, as it contains the keys to access the Twitter API.
+  
+ run -> sudo pip3 install tweepy
+ 
+ run command -> python3 project3.py [@TWIITERUSER] 
+ 
+ replace [@TWIITERUSER] with any user, for this example we will run the following command.
+ 
+ run command -> python3 project3.py tsheetiz
+ 
+ # Conclusion
+ 
+ As you can see I used my Twitter account as an example, and the output that you would get in the terminal is that "The account has not been flagged as a bot". If you were to suspect an account of being bot, you can input their username and wait for it to analyze. It will take a lot longer if an account is detected as a bot, as it will analyze all of their hashtags and mentions in the past 30 days. Then if they are suspected of a bot, then you will get the following error "This account has been flagged as a bot account! Requires further review!". 
+ 
+ Thank you for a great semester! This was a fun project to work on.
