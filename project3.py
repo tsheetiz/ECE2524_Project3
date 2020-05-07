@@ -14,6 +14,8 @@ import keys
 # Profanity library that detects profanity
 from profanity import profanity
 
+f = open("twitter_data.txt", "w")
+
 # Authenticate
 auth = OAuthHandler(keys.TWITTER_KEY, keys.TWITTER_SECRET_KEY)
 auth.set_access_token(keys.TWITTER_ACCESS_TOKEN, keys.TWITTER_ACCESS_TOKEN_SECRET)
@@ -33,22 +35,22 @@ if len(account_list) > 0:
 	for target in account_list:
 		print("Getting data for " + target)
 		item = api.get_user(target)
-		print("name: " + item.name)
-		print("screen_name: " + item.screen_name)
-		print("description: " + item.description)
-		print("statuses_count: " + str(item.statuses_count))
-		print("friends_count: " + str(item.friends_count))
-		print("followers_count: " + str(item.followers_count))
+		print("name: " + item.name, file=f)
+		print("screen_name: " + item.screen_name, file=f)
+		print("description: " + item.description, file=f)
+		print("statuses_count: " + str(item.statuses_count), file=f)
+		print("friends_count: " + str(item.friends_count), file=f)
+		print("followers_count: " + str(item.followers_count), file=f)
 
 # Need to obtain the create date of the twitter account
 tweets = item.statuses_count
 account_created_date = item.created_at
 delta = datetime.utcnow() - account_created_date
 account_age_days = delta.days
-print("Account age (in days): " + str(account_age_days))
+print("Account age (in days): " + str(account_age_days), file=f)
 
 if account_age_days > 0:
-	print("Average tweets per day: " + "%.2f"%(float(tweets)/float(account_age_days)))
+	print("Average tweets per day: " + "%.2f"%(float(tweets)/float(account_age_days)), file=f)
 
 hashtags = []
 mentions = []
@@ -75,6 +77,15 @@ for status in Cursor(api.user_timeline, id=target).items():
 		if status.created_at < end_date:
 			break
 
+print("Most mentioned Twitter users:", file=f)
+for item, count in Counter(mentions).most_common(10):
+	print(item + "\t" + str(count), file=f)
 
+print("Most used hashtags:", file=f)
+for item, count in Counter(hashtags).most_common(10):
+	print(item + "\t" + str(count), file=f)
 
+print("All done. Processed " + str(tweet_count) + " tweets.", file=f)
+
+f.close()
 
